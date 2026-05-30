@@ -56,11 +56,11 @@ const Quran = () => {
           ))}
         </select>
 
-        <div className="bg-amber-300 p-4 rounded grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        <div className="p-4 rounded grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
           {surahs.map((surah) => (
             <button
               key={surah.number}
-              className="bg-white p-3 rounded shadow-sm text-sm font-medium hover:bg-amber-100 transition truncate text-center"
+              className="bg-emerald-100 p-3 rounded shadow-sm text-sm font-medium hover:bg-amber-100 transition truncate text-center cursor-pointer"
               onClick={() => {
                 if (
                   selectedReciter &&
