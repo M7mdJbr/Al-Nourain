@@ -3,7 +3,7 @@
 An elegant, modern, and responsive Islamic Web Application that serves as a digital companion for Muslims worldwide. Built using **React.js** and styled with **Tailwind CSS**, the platform offers seamless access to the Holy Qur'an audio recitations and verified Hadith collections.
 
 ##  Live Demo
-Check out the live website here: [Live Demo Link]() 
+Check out the live website here: [Live Demo Link](https://al-nourain.netlify.app/) 
 
 ---
 
