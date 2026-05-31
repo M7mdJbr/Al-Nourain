@@ -9,7 +9,7 @@ const Navbar = () => {
           Al-Nourain
         </Link>
       </div>
-      <div className="flex justify-center gap-6 font-medium">
+      <div className="flex justify-center gap-3 font-medium">
         <Link to="/" className="hover:text-emerald-600 transition-colors">
           Home
         </Link>
