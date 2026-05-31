@@ -1,39 +1,40 @@
-# Quran & Sunnah Platform 📖✨
+# Al-Nourain - النورين
 
-A dynamic web application dedicated to the Holy Quran and Prophetic Sunnah (Hadith), designed to provide users with seamless access to Quranic recitations and authentic Islamic texts.
+An elegant, modern, and responsive Islamic Web Application that serves as a digital companion for Muslims worldwide. Built using **React.js** and styled with **Tailwind CSS**, the platform offers seamless access to the Holy Qur'an audio recitations and verified Hadith collections.
 
-> **Status:** Under Active Development 🚀
-
----
-
-## 🌟 Current Features
-
-### 🎙️ Quranic Recitations
-* **Global Reciters:** Dynamic retrieval of global reciters with localized names.
-* **Full Surah Directory:** Comprehensive list of all 114 Holy Surahs fetched dynamically.
-* **Dedicated Audio Player:** A standalone dynamic audio player page leveraging React Router state management for a seamless stream experience.
+##  Live Demo
+Check out the live website here: [Live Demo Link]() 
 
 ---
 
-## 🛠️ Upcoming Features (In Development)
+##  Features
 
-### 📖 Sunnah & Hadith Section
-* **Authentic Books:** Integration of major Hadith books (Sahih al-Bukhari, Sahih Muslim, etc.).
-* **Text & Commentary:** Readable Hadith texts with explanations and searchability.
+###  1. Holy Qur'an Section
+* **Dynamic Reciter Selection:** Fetching a massive list of world-renowned Qur'an reciters via the MP3Quran API.
+* **Complete Surah Index:** Instantly displays all 114 Surahs.
+* **Custom Audio Player:** A dedicated audio player page (`/player`) wrapped in a clean, modern UI mimicking a native music streaming app.
 
-### 🔍 Advanced Enhancements
-* **Smart Search:** Fast filtering for Surahs, reciters, and Hadith narrations.
-* **Favorites & Bookmarks:** Ability to save preferred recitations and bookmarked Hadith texts.
-* **Responsive UI/UX:** Refined layout options for mobile and desktop screens.
+###  2. Hadith Encyclopedia (Sunnah)
+* **Core Hadith Books:** Showcases 8 major prophetic books including Sahih Al-Bukhari, Sahih Muslim, Sunan Abu Dawood, Jami' Al-Tirmidhi, and more.
+* **Bilingual View:** Displays the original Arabic text side-by-side or stacked with its accurate English translation.
+* **Smart Pagination:** Optimized data fetching that allows users to navigate smoothly through thousands of prophetic narrations without overloading the browser.
+
+###  3. UI/UX Excellence
+* Unified and sophisticated color palette based on **Indigo** and **Soft Gray** accents.
+* Fully responsive layout (Mobile, Tablet, and Desktop friendly) utilizing **CSS Grid**.
+* Smart loading states and button toggles for seamless screen navigation.
+
+---
+
+## Tech Stack & APIs
+
+* **Frontend:** React.js (Vite)
+* **Styling:** Tailwind CSS 
+* **Routing:** React Router DOM
+* **APIs Used:**
+  * [MP3Quran API v3](https://mp3quran.net/api/v3/) - For reciters and audio server streaming links.
+  * [Al Quran Cloud API](https://alquran.cloud/api) - For the 114 Surah meta-data index.
+  * [HadithAPI](https://www.hadithapi.com/) - For comprehensive, structured, and paginated Hadith records.
 
 ---
 
-## 💻 Tech Stack
-
-* **Frontend:** React.js, React Router DOM
-* **Styling:** Tailwind CSS
-* **APIs Used:** 
-  * MP3Quran API (Recitations)
-  * AlQuran Cloud API (Surah Metadata)
-
----
