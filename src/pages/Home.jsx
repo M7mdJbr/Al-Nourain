@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="bg-slate-50 min-h-screen text-slate-800 p-6 flex flex-col items-center">
+    <div className="bg-slate-50 min-h-screen text-slate-800 p-6 flex flex-col items-center justify-center gap-12 py-16">
       {/* Hero Section */}
-      <div className="mt-20 text-center max-w-2xl">
+      <div className="text-center max-w-2xl">
         <h1 className="font-cairo text-5xl md:text-6xl font-bold text-emerald-800 mb-6">
           Al-Nourain
         </h1>
@@ -16,7 +16,7 @@ const Home = () => {
       </div>
 
       {/* Quick Access Cards Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full mt-16 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full px-4">
         {/* Holy Qur'an Card */}
         <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between items-center text-center hover:shadow-md transition-all duration-300">
           <div>
