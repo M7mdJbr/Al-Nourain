@@ -110,9 +110,6 @@ const Sunnah = () => {
                 >
                   <div className="flex justify-between text-sm text-gray-400 mb-4 border-b border-gray-100 pb-2">
                     <span>Hadith No: {hadith.hadithNumber}</span>
-                    <span className="bg-green-50 text-green-700 px-2 py-0.5 rounded-full text-xs font-bold">
-                      {hadith.status}
-                    </span>
                   </div>
 
                   {/* Arabic Text (Right Aligned) */}
