@@ -30,13 +30,13 @@ const Quran = () => {
   }, []);
 
   return (
-    <div className="bg-amber-50 min-h-screen p-6 text-left" dir="ltr">
-      <div className="max-w-6xl mx-auto bg-white p-6 rounded-xl shadow-sm">
-        <label className="block font-bold text-amber-900 mb-2">
+    <div className="min-h-screen bg-gray-50 p-6 text-left" dir="ltr">
+      <div className="max-w-6xl mx-auto bg-white p-6 rounded-xl shadow-md border border-gray-100">
+        <label className="block font-bold text-indigo-900 mb-2">
           Choose Reciter:
         </label>
         <select
-          className="w-full max-w-xs p-2 border border-amber-200 rounded mb-6 block"
+          className="w-full max-w-xs p-2 border border-gray-200 rounded-md mb-6 block focus:outline-none focus:border-indigo-600 text-gray-700"
           onChange={(e) => {
             if (!e.target.value) {
               setSelectedReciter(null);
@@ -56,11 +56,11 @@ const Quran = () => {
           ))}
         </select>
 
-        <div className="p-4 rounded grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
           {surahs.map((surah) => (
             <button
               key={surah.number}
-              className="bg-emerald-100 p-3 rounded shadow-sm text-sm font-medium hover:bg-amber-100 transition truncate text-center cursor-pointer"
+              className="bg-gray-100 p-3 rounded-md shadow-sm text-sm font-medium text-indigo-900 hover:bg-indigo-600 hover:text-white transition-colors duration-200 truncate text-center cursor-pointer border border-gray-200/50"
               onClick={() => {
                 if (
                   selectedReciter &&
