@@ -27,8 +27,7 @@ const Home = () => {
               The Holy Qur'an
             </h2>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Read, explore, and ponder the verses of the Holy Qur'an with clear
-              typography and translation.
+              Listen and download the Holy Quran in the voices of many reciters.
             </p>
           </div>
           <Link
