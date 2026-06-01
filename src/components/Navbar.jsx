@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-
-  // تأثير تغيير شكل النافبار عند السكرول
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -14,6 +14,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => { setIsMobileMenuOpen(false) }, [location.pathname])
+  
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/quran", label: "Qur'an" },
@@ -53,7 +55,6 @@ const Navbar = () => {
                     : "text-slate-600 hover:text-emerald-700 hover:bg-white/80"
                 }`}
               >
-                {/* خلفية العنصر النشط */}
                 {isActive && (
                   <span className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl -z-10"></span>
                 )}
@@ -64,9 +65,32 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button (Visual Only - Placeholder) */}
-        <button className="md:hidden p-2.5 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors border border-slate-200/60">
-          <i className="fa-solid fa-bars text-lg"></i>
+        <button
+          className="md:hidden p-2.5 cursor-pointer text-slate-600 hover:bg-slate-100 rounded-xl transition-colors border border-slate-200/60"
+          onClick={() => {
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+          }}
+        >
+          <i
+            className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"} text-lg`}
+          ></i>
         </button>
+      </div>
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}`}>
+        <nav className="px-6 pb-6 pt-2 flex flex-col gap-2 bg-white/95 backdrop-blur-md border-slate-200/60">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <Link
+                key= {link.to}
+                to= {link.to}
+                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200${isActive}?"bg-gradient-to-r from-emerald-600 to-emerald-700 text-shadow-emerald-950 shadow-sm ":"text-slate-600 hover:text-emerald-700 hover:bg-slate-50"}`}
+              >
+              {link.label}
+              </Link>
+            )
+        })}
+        </nav>
       </div>
     </header>
   );
