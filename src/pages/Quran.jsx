@@ -99,7 +99,7 @@ const Quran = () => {
           {/* Surahs Grid */}
           <div className="border-t border-slate-100 pt-6">
             <h3 className="font-semibold text-slate-700 mb-4 flex items-center gap-2">
-              <i className="fa-regular fa-list-check"></i>
+              <i class="fa-solid fa-audio-description"></i>
               Select a Surah
             </h3>
 
