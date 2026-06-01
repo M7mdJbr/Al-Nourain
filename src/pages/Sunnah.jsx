@@ -69,7 +69,7 @@ const Sunnah = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10 px-4">
-          <span className="inline-block px-4 py-1.5 mb-4 bg-amber-100/80 text-amber-800 text-xs font-semibold rounded-full tracking-wide uppercase border border-amber-200">
+          <span className="inline-block px-4 py-1.5 mb-4 mt-[100px] bg-amber-100/80 text-amber-800 text-xs font-semibold rounded-full tracking-wide uppercase border border-amber-200">
             Prophetic Sunnah
           </span>
           <h1 className="font-cairo text-4xl md:text-5xl font-bold text-emerald-900 mb-3">

@@ -6,7 +6,7 @@ const Home = () => {
     <div className="bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 min-h-screen text-slate-800 p-6 flex flex-col items-center justify-center gap-12 py-16">
       {/* Hero Section */}
       <div className="text-center max-w-2xl px-4">
-        <span className="inline-block px-4 py-1.5 mb-5 bg-emerald-100/80 text-emerald-800 text-xs font-semibold rounded-full tracking-wide uppercase border border-emerald-200">
+        <span className="inline-block px-4 mt-[25px] py-1.5 mb-5 bg-emerald-100/80 text-emerald-800 text-xs font-semibold rounded-full tracking-wide uppercase border border-emerald-200">
           Welcome
         </span>
         <h1 className="font-cairo text-5xl md:text-6xl font-bold text-emerald-900 mb-4 tracking-tight">
