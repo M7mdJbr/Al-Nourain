@@ -34,6 +34,7 @@ const Quran = () => {
       });
   }, []);
 
+
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 p-6 text-left"
@@ -102,7 +103,6 @@ const Quran = () => {
               <i class="fa-solid fa-audio-description"></i>
               Select a Surah
             </h3>
-
             {loading.surahs ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                 {[...Array(12)].map((_, i) => (
