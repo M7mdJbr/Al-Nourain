@@ -18,7 +18,7 @@ const Sunnah = () => {
         if (data.books) {
           const allBooks = data.books;
           const filteredBooks = allBooks.filter(
-            (book) => book.bookSlug !== "al-silsila-sahiha",
+            (book) => book.bookSlug !== "al-silsila-sahiha" && book.bookSlug !== "musnad-ahmad",
           );
           setBooks(filteredBooks);
         }
