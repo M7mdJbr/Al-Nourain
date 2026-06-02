@@ -194,6 +194,9 @@ const Sunnah = () => {
                         <i className="fa-solid fa-hashtag text-xs"></i>
                         Hadith #{hadith.hadithNumber}
                       </span>
+                      <button>
+                        <i class="fa-regular fa-heart text-3xl cursor-pointer"></i>
+                      </button>
                       {hadith.chapterName && (
                         <span className="text-slate-500 italic">
                           <i className="fa-regular fa-folder me-1"></i>

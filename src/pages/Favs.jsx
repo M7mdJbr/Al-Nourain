@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 const Favs = () => {
   const favoriteSurahs = [
-    { id: 1, name: "سورة الفاتحة", reciter: "مشاري العفاسي" },
-    { id: 2, name: "سورة البقرة", reciter: "عبد الباسط عبد الصمد" },
+    { id: 1, name: "Surah Al-Fatihah", reciter: "Mishary Alafasy" },
+    { id: 2, name: "Surah Al-Baqarah", reciter: "Abdul Basit Abdul Samad" },
   ];
 
   const favoriteHadiths = [
     {
       id: 1,
-      text: "إنما الأعمال بالنيات وإنما لكل امرئ ما نوى...",
-      source: "صحيح البخاري",
+      text: "Actions are judged by intentions, and every person will get what they intended...",
+      source: "Sahih Al-Bukhari",
     },
   ];
 
@@ -22,12 +22,12 @@ const Favs = () => {
           My List
         </span>
         <h1 className="font-cairo text-4xl md:text-5xl font-bold text-emerald-900 mb-4 tracking-tight">
-          المفضلات
+          Favorites
         </h1>
         <div className="w-20 h-1 bg-gradient-to-r from-transparent via-emerald-600 to-transparent mx-auto mb-6 rounded-full"></div>
         <p className="font-cairo text-base text-slate-600 leading-relaxed">
-          قائمتك الخاصة بالسور الأثيرة والأحاديث النبوية الشريفة التي قمت
-          بحفظها.
+          Your personal collection of cherished Surahs and noble Hadiths you
+          have saved.
         </p>
       </div>
 
@@ -38,13 +38,13 @@ const Favs = () => {
               <i className="fa-solid fa-book"></i>
             </div>
             <h2 className="text-xl font-bold text-emerald-900 font-cairo">
-              سور ومقاطع مفضلة
+              Favorite Surahs & Clips
             </h2>
           </div>
 
           {favoriteSurahs.length === 0 ? (
             <p className="text-slate-400 text-sm text-center py-8">
-              لا توجد سور في المفضلة حالياً.
+              No Surahs in favorites yet.
             </p>
           ) : (
             <div className="flex flex-col gap-3">
@@ -53,7 +53,7 @@ const Favs = () => {
                   key={surah.id}
                   className="flex items-center justify-between p-4 bg-slate-50/50 rounded-xl border border-slate-100 hover:border-emerald-200 transition-colors group"
                 >
-                  <div className="text-right">
+                  <div className="text-left">
                     <h3 className="font-cairo font-bold text-emerald-900 text-base">
                       {surah.name}
                     </h3>
@@ -63,7 +63,7 @@ const Favs = () => {
                   </div>
                   <button
                     className="text-slate-400 hover:text-red-500 p-2 rounded-lg hover:bg-red-50 transition-colors duration-200"
-                    title="إزالة"
+                    title="Remove"
                   >
                     <i className="fa-solid fa-xmark text-base"></i>
                   </button>
@@ -79,13 +79,13 @@ const Favs = () => {
               <i className="fa-brands fa-ussunnah"></i>
             </div>
             <h2 className="text-xl font-bold text-emerald-900 font-cairo">
-              أحاديث محفوظة
+              Saved Hadiths
             </h2>
           </div>
 
           {favoriteHadiths.length === 0 ? (
             <p className="text-slate-400 text-sm text-center py-8">
-              لا توجد أحاديث في المفضلة حالياً.
+              No Hadiths in favorites yet.
             </p>
           ) : (
             <div className="flex flex-col gap-3">
@@ -94,7 +94,7 @@ const Favs = () => {
                   key={hadith.id}
                   className="flex flex-col gap-3 p-4 bg-slate-50/50 rounded-xl border border-slate-100 hover:border-emerald-200 transition-colors"
                 >
-                  <p className="font-cairo text-sm text-slate-700 leading-relaxed text-right italic">
+                  <p className="font-cairo text-sm text-slate-700 leading-relaxed text-left italic">
                     "{hadith.text}"
                   </p>
                   <div className="flex items-center justify-between border-t border-slate-100/70 pt-2 mt-1">
@@ -103,7 +103,7 @@ const Favs = () => {
                     </span>
                     <button
                       className="text-slate-400 hover:text-red-500 p-1.5 rounded-lg hover:bg-red-50 transition-colors duration-200"
-                      title="إزالة"
+                      title="Remove"
                     >
                       <i className="fa-solid fa-xmark text-base"></i>
                     </button>
@@ -120,7 +120,7 @@ const Favs = () => {
         className="group/btn border border-emerald-700/30 hover:border-emerald-700/60 text-emerald-800 bg-white hover:bg-emerald-50 font-medium px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm text-sm"
       >
         <i className="fa-solid fa-arrow-left text-xs transition-transform group-hover/btn:-translate-x-1"></i>
-        العودة للرئيسية
+        Back to Home
       </Link>
     </div>
   );
