@@ -45,7 +45,6 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center gap-1 bg-slate-100/50 p-1.5 rounded-2xl border border-slate-200/60">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
-            const isFav = link.to === "/favs";
 
             return (
               <Link
@@ -54,24 +53,13 @@ const Navbar = () => {
                 className={`relative px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
                     ? "text-white shadow-sm"
-                    : isFav
-                      ? "text-rose-600 hover:text-rose-700 bg-rose-50/60 hover:bg-rose-50 border border-rose-100"
-                      : "text-slate-600 hover:text-emerald-700 hover:bg-white/80"
+                    : "text-slate-600 hover:text-emerald-700 hover:bg-white/80"
                 }`}
               >
                 {isActive && (
                   <span
-                    className={`absolute inset-0 rounded-xl -z-10 ${
-                      isFav
-                        ? "bg-gradient-to-r from-rose-500 to-rose-600"
-                        : "bg-gradient-to-r from-emerald-600 to-emerald-700"
-                    }`}
+                    className={`absolute inset-0 rounded-xl -z-10 bg-gradient-to-r from-emerald-600 to-emerald-700`}
                   ></span>
-                )}
-                {isFav && (
-                  <i
-                    className={`fa-heart ${isActive ? "fa-solid" : "fa-regular text-rose-400"}`}
-                  ></i>
                 )}
                 {link.label}
               </Link>
@@ -100,7 +88,11 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2`}
+                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                  location.pathname === link.to
+                    ? "bg-emerald-100 text-emerald-800"
+                    : "text-slate-700 hover:bg-slate-50"
+                }`}
               >
                 {link.label}
               </Link>
