@@ -22,7 +22,6 @@ const Navbar = () => {
     { to: "/", label: "Home" },
     { to: "/quran", label: "Qur'an" },
     { to: "/sunnah", label: "Sunnah" },
-    { to: "/favs", label: "Favourites" },
   ];
 
   return (
@@ -97,28 +96,12 @@ const Navbar = () => {
       >
         <nav className="px-6 pb-6 pt-2 flex flex-col gap-2 bg-white/95 backdrop-blur-md border-slate-200/60">
           {navLinks.map((link) => {
-            const isActive = location.pathname === link.to;
-            const isFav = link.to === "/favs";
-
             return (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
-                  isActive
-                    ? isFav
-                      ? "bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-sm"
-                      : "bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow-sm"
-                    : isFav
-                      ? "text-rose-600 bg-rose-50/50 border border-rose-100"
-                      : "text-slate-600 hover:text-emerald-700 hover:bg-slate-50"
-                }`}
+                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2`}
               >
-                {isFav && (
-                  <i
-                    className={`fa-heart ${isActive ? "fa-solid" : "fa-regular"}`}
-                  ></i>
-                )}
                 {link.label}
               </Link>
             );

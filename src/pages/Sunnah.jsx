@@ -9,7 +9,7 @@ const Sunnah = () => {
   const [loadingHadiths, setLoadingHadiths] = useState(false);
   const [loadingBooks, setLoadingBooks] = useState(true);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
+  const apiKey = "$2y$10$uS6IrpsXb2yfrKdPcGBOUeW7EDEyVx0ieBJNVdPGcLegWK2ZA7pO";
 
   useEffect(() => {
     fetch(`https://www.hadithapi.com/api/books?apiKey=${apiKey}`)
