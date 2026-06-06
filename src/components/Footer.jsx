@@ -22,7 +22,6 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-emerald-700 font-semibold hover:text-emerald-900 hover:underline decoration-emerald-300/60 underline-offset-4 transition-all duration-200"
           >
-            <i className="fa-brands fa-github text-sm"></i>
             M7mdJbr
           </a>
         </p>
