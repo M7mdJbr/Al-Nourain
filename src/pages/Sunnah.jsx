@@ -9,7 +9,7 @@ const Sunnah = () => {
   const [loadingHadiths, setLoadingHadiths] = useState(false);
   const [loadingBooks, setLoadingBooks] = useState(true);
 
-  const apiKey = "$2y$10$uS6IrpsXb2yfrKdPcGBOUeW7EDEyVx0ieBJNVdPGcLegWK2ZA7pO";
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     fetch(`https://www.hadithapi.com/api/books?apiKey=${apiKey}`)
@@ -18,7 +18,9 @@ const Sunnah = () => {
         if (data.books) {
           const allBooks = data.books;
           const filteredBooks = allBooks.filter(
-            (book) => book.bookSlug !== "al-silsila-sahiha" && book.bookSlug !== "musnad-ahmad",
+            (book) =>
+              book.bookSlug !== "al-silsila-sahiha" &&
+              book.bookSlug !== "musnad-ahmad",
           );
           setBooks(filteredBooks);
         }
