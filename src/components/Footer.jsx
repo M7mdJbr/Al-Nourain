@@ -15,14 +15,14 @@ const Footer = () => {
         <p className="font-cairo text-sm md:text-base leading-relaxed">
           Made with{" "}
           <i className="fa-solid fa-heart text-rose-500 mx-0.5 animate-pulse"></i>{" "}
-          by{" "}
+          by
           <a
-            href="https://github.com/M7mdJbr"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-emerald-700 font-semibold hover:text-emerald-900 hover:underline decoration-emerald-300/60 underline-offset-4 transition-all duration-200"
           >
-            M7mdJbr
+            AnonDev
           </a>
         </p>
       </div>
