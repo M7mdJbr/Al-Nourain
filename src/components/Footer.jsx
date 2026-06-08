@@ -15,7 +15,7 @@ const Footer = () => {
         <p className="font-cairo text-sm md:text-base leading-relaxed">
           Made with{" "}
           <i className="fa-solid fa-heart text-rose-500 mx-0.5 animate-pulse"></i>{" "}
-          by
+          by{""}
           <a
             href="#"
             target="_blank"
