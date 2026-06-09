@@ -104,6 +104,7 @@ const Navbar = () => {
               </Link>
             );
           })}
+          <ThemeToggle />
         </nav>
       </div>
     </header>
