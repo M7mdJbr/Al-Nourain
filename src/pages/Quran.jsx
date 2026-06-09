@@ -34,36 +34,35 @@ const Quran = () => {
       });
   }, []);
 
-
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 p-6 text-left"
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-6 text-left transition-colors duration-300"
       dir="ltr"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10 px-4">
-          <span className="inline-block px-4 py-1.5 mb-4 mt-[100px] bg-emerald-100/80 text-emerald-800 text-xs font-semibold rounded-full tracking-wide uppercase border border-emerald-200">
+          <span className="inline-block px-4 py-1.5 mb-4 mt-[100px] bg-emerald-100/80 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 text-xs font-semibold rounded-full tracking-wide uppercase border border-emerald-200 dark:border-emerald-700/50">
             Holy Qur'an
           </span>
-          <h1 className="font-cairo text-4xl md:text-5xl font-bold text-emerald-900 mb-3">
+          <h1 className="font-cairo text-4xl md:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3">
             Choose Your Recitation
           </h1>
-          <p className="text-slate-600 max-w-xl mx-auto">
+          <p className="text-slate-600 dark:text-gray-300 max-w-xl mx-auto">
             Select a reciter and a Surah to start listening
           </p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/60">
+        <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/60 dark:border-gray-700">
           {/* Reciter Selection */}
           <div className="mb-8">
-            <label className="block font-semibold text-emerald-900 mb-3 text-lg">
+            <label className="block font-semibold text-emerald-900 dark:text-emerald-400 mb-3 text-lg">
               <i className="fa-solid fa-microphone-lines me-2"></i>
               Choose Reciter:
             </label>
             <div className="relative max-w-xl">
               <select
-                className="w-full p-3.5 pr-10 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-slate-700 appearance-none transition-all cursor-pointer hover:border-slate-300"
+                className="w-full p-3.5 pr-10 bg-slate-50 dark:bg-gray-700 border border-slate-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-slate-700 dark:text-gray-200 appearance-none transition-all cursor-pointer hover:border-slate-300 dark:hover:border-gray-500"
                 onChange={(e) => {
                   if (!e.target.value) {
                     setSelectedReciter(null);
@@ -83,14 +82,14 @@ const Quran = () => {
                   </option>
                 ))}
               </select>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-slate-400">
+              <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-slate-400 dark:text-gray-400">
                 <i className="fa-solid fa-chevron-down text-xs"></i>
               </div>
             </div>
 
             {/* Selected Reciter Badge */}
             {selectedReciter && (
-              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-800 rounded-full text-sm font-medium border border-emerald-100 animate-fade-in">
+              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-medium border border-emerald-100 dark:border-emerald-700/50 animate-fade-in">
                 <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                 {selectedReciter.name}
               </div>
@@ -98,9 +97,9 @@ const Quran = () => {
           </div>
 
           {/* Surahs Grid */}
-          <div className="border-t border-slate-100 pt-6">
-            <h3 className="font-semibold text-slate-700 mb-4 flex items-center gap-2">
-              <i class="fa-solid fa-audio-description"></i>
+          <div className="border-t border-slate-100 dark:border-gray-700 pt-6">
+            <h3 className="font-semibold text-slate-700 dark:text-gray-200 mb-4 flex items-center gap-2">
+              <i className="fa-solid fa-audio-description"></i>
               Select a Surah
             </h3>
             {loading.surahs ? (
@@ -108,7 +107,7 @@ const Quran = () => {
                 {[...Array(12)].map((_, i) => (
                   <div
                     key={i}
-                    className="bg-slate-100/80 p-4 rounded-xl animate-pulse h-14"
+                    className="bg-slate-100/80 dark:bg-gray-700/50 p-4 rounded-xl animate-pulse h-14"
                   ></div>
                 ))}
               </div>
@@ -117,7 +116,7 @@ const Quran = () => {
                 {surahs.map((surah) => (
                   <button
                     key={surah.number}
-                    className="group relative bg-slate-50 p-4 rounded-xl shadow-sm text-sm font-medium text-slate-700 hover:bg-emerald-600 hover:text-white transition-all duration-200 truncate text-center cursor-pointer border border-slate-200/60 hover:border-emerald-500/50 hover:-translate-y-0.5 hover:shadow-md"
+                    className="group relative bg-slate-50 dark:bg-gray-700/50 p-4 rounded-xl shadow-sm text-sm font-medium text-slate-700 dark:text-gray-200 hover:bg-emerald-600 hover:text-white transition-all duration-200 truncate text-center cursor-pointer border border-slate-200/60 dark:border-gray-600 hover:border-emerald-500/50 hover:-translate-y-0.5 hover:shadow-md"
                     onClick={() => {
                       if (
                         selectedReciter &&
@@ -142,7 +141,7 @@ const Quran = () => {
                       }
                     }}
                   >
-                    <span className="absolute top-2 left-2 text-[10px] font-bold text-slate-400 group-hover:text-emerald-100 transition-colors">
+                    <span className="absolute top-2 left-2 text-[10px] font-bold text-slate-400 dark:text-gray-400 group-hover:text-emerald-100 transition-colors">
                       {surah.number}
                     </span>
                     <span className="block mt-1">{surah.englishName}</span>
