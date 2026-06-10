@@ -32,13 +32,13 @@ const SurahDetails = () => {
 
   return (
     <div
-      className="min-h-screen font-quran bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-6 transition-colors duration-300"
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-6 transition-colors duration-300"
       dir="rtl"
     >
       <div className="mt-25 max-w-4xl mx-auto">
         <Link
           to="/qurantext"
-          className="inline-flex font-quran items-center gap-2 text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 mb-6 transition-colors font-medium"
+          className="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 mb-6 transition-colors font-medium"
         >
           → العودة لقائمة السور
         </Link>
@@ -106,7 +106,7 @@ const SurahDetails = () => {
             </div>
             <Link
               to="/qurantext"
-              className="mt-15 inline-flex font-quran items-center gap-2 text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 mb-6 transition-colors font-medium"
+              className="mt-10 inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 mb-6 transition-colors font-medium"
             >
               → العودة لقائمة السور
             </Link>

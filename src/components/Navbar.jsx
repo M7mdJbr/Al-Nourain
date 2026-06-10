@@ -86,7 +86,7 @@ const Navbar = () => {
       {/* Mobile Menu Dropdown */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          isMobileMenuOpen ? "max-h- opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="px-6 pb-6 pt-2 flex flex-col gap-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-slate-200/60 dark:border-gray-800">
