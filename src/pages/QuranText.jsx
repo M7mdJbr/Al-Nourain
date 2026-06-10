@@ -24,7 +24,7 @@ const Qurantext = () => {
     >
       <div className="max-w-6xl mx-auto">
         <h1 className="mt-25 text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
-          Quranic Surahs
+          سور القرآن الكريم
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

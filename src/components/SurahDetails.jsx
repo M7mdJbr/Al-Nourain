@@ -104,6 +104,12 @@ const SurahDetails = () => {
                 </div>
               ))}
             </div>
+            <Link
+              to="/qurantext"
+              className="mt-15 inline-flex font-quran items-center gap-2 text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 mb-6 transition-colors font-medium"
+            >
+              → العودة لقائمة السور
+            </Link>
           </>
         )}
       </div>
