@@ -72,7 +72,7 @@ const SurahDetails = () => {
               <div className="flex items-center justify-center w-16 h-16 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 font-bold text-2xl mx-auto mb-4">
                 {surahData.number}
               </div>
-              <h1 className="text-4xl font-bold text-emerald-700 dark:text-emerald-400 mb-3">
+              <h1 className="font-hafs text-4xl text-emerald-700 dark:text-emerald-400 mb-3">
                 {surahData.name}
               </h1>
               <p className="text-gray-500 dark:text-gray-400 text-lg">
@@ -82,7 +82,7 @@ const SurahDetails = () => {
             </div>
 
             {surahData.number !== 9 && (
-              <p className=" font-quran text-center text-2xl md:text-3xl text-emerald-800 dark:text-emerald-300 mb-10 font-serif leading-relaxed">
+              <p className="font-hafs text-center text-2xl md:text-3xl text-emerald-800 dark:text-emerald-300 mb-10 leading-[2.4]">
                 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
               </p>
             )}
@@ -97,7 +97,7 @@ const SurahDetails = () => {
                     <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 font-bold text-sm mt-1">
                       {ayah.numberInSurah}
                     </div>
-                    <p className="font-quran flex-1 text-xl md:text-2xl leading-[2.2] text-gray-800 dark:text-gray-200 font-serif text-right">
+                    <p className="font-hafs flex-1 text-xl md:text-2xl leading-[2.4] text-gray-800 dark:text-gray-200 text-right">
                       {ayah.text}
                     </p>
                   </div>

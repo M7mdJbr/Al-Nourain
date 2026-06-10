@@ -1,12 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap");
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+    font-family: "Hafs Smart";
+    src: url("/fonts/HafsSmart.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Amiri Quran";
+    src: url("/fonts/AmiriQuran-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    unicode-range:
+        U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
 @theme {
     --font-cairo: "Cairo", sans-serif;
-    --font-quran: "Amiri", serif;
     --font-ibm: "IBM Plex Sans Arabic", sans-serif;
+    --font-amiri: "Amiri", serif;
     --font-quran: "Amiri Quran", serif;
+    --font-hafs: "Hafs Smart", serif;
+}
+
+@layer base {
+    [class*="font-quran"] {
+        font-feature-settings:
+            "ss01" on,
+            "ss02" on;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        line-height: 2.2;
+    }
+
+    [class*="font-hafs"] {
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        line-height: 2.4;
+    }
 }

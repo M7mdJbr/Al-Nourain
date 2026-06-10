@@ -23,7 +23,7 @@ const Qurantext = () => {
       dir="rtl"
     >
       <div className="max-w-6xl mx-auto">
-        <h1 className="mt-25 text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
+        <h1 className="font-hafs mt-25 text-3xl text-center text-emerald-700 dark:text-emerald-400 mb-8 leading-[2.4]">
           سور القرآن الكريم
         </h1>
 
@@ -39,7 +39,7 @@ const Qurantext = () => {
               </div>
 
               <div className="text-right flex-1 mr-4">
-                <h2 className="font-semibold text-gray-800 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                <h2 className="font-hafs font-semibold text-gray-800 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors leading-[2.4]">
                   {surah.name}
                 </h2>
                 <p className="text-xs text-gray-400 dark:text-gray-500">
