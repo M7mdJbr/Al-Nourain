@@ -34,16 +34,27 @@ const Home = () => {
               The Holy Qur'an
             </h2>
             <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-              Listen and download the Holy Quran in the voices of many reciters.
+              Read and listen and download the Holy Quran in the voices of many
+              reciters.
             </p>
           </div>
-          <Link
-            to="/quran"
-            className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 w-full flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
-          >
-            Explore Qur'an
-            <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
-          </Link>
+          <div className="flex justify-center gap-5">
+            <Link
+              to="/quran"
+              className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-1 rounded-xl transition-all duration-300 w-full flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+            >
+              Listen
+              <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
+            </Link>
+
+            <Link
+              to="/qurantext"
+              className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 w-full flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+            >
+              Read
+              <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
+            </Link>
+          </div>
         </div>
 
         {/* Prophetic Sunnah Card */}

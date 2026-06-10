@@ -21,7 +21,8 @@ const Navbar = () => {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/quran", label: "Qur'an" },
+    { to: "/quran", label: "Qur'an Mp3" },
+    { to: "/qurantext", label: "Qur'an Text" },
     { to: "/sunnah", label: "Sunnah" },
   ];
 
