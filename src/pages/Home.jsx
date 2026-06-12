@@ -3,22 +3,24 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen text-slate-800 dark:text-gray-100 p-6 flex flex-col items-center justify-center gap-12 py-16 transition-colors duration-300">
+    <div
+      dir="rtl"
+      className="bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen text-slate-800 dark:text-gray-100 p-6 flex flex-col items-center justify-center gap-12 py-16 transition-colors duration-300"
+    >
       {/* Hero Section */}
       <div className="text-center max-w-2xl px-4">
         <span className="inline-block px-4 mt-[25px] py-1.5 mb-5 bg-emerald-100/80 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 text-xs font-semibold rounded-full tracking-wide uppercase border border-emerald-200 dark:border-emerald-700/50">
-          Welcome
+          مرحبا
         </span>
 
         <h1 className="font-cairo text-5xl md:text-6xl font-bold text-emerald-900 dark:text-emerald-400 mb-4 tracking-tight">
-          Al-Nourain
+          مكتبة النورين
         </h1>
 
         <div className="w-20 h-1 bg-gradient-to-r from-transparent via-emerald-600 to-transparent mx-auto mb-6 rounded-full"></div>
 
-        <p className="font-cairo text-lg text-slate-600 dark:text-gray-300 italic leading-relaxed">
-          "So adhere to that which is revealed to you. Indeed, you are on a
-          straight path."
+        <p className="font-cairo text-lg text-slate-600 dark:text-gray-300 leading-relaxed">
+          مكتبة توفر المواد المسموعة والمقروءة لعلوم الوحيين
         </p>
       </div>
 
@@ -31,11 +33,10 @@ const Home = () => {
               <i className="fa-solid fa-book"></i>
             </div>
             <h2 className="text-2xl font-bold text-emerald-900 dark:text-emerald-400 mb-2 font-cairo">
-              The Holy Qur'an
+              القرآن الكريم
             </h2>
             <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-              Read and listen and download the Holy Quran in the voices of many
-              reciters.
+              اقرأ واستمع للعديد من التلاوات بأصوات مختلف القراء.
             </p>
           </div>
           <div className="flex justify-center gap-5">
@@ -43,7 +44,7 @@ const Home = () => {
               to="/quran"
               className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-1 rounded-xl transition-all duration-300 w-full flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
             >
-              Listen
+              استمع
               <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
             </Link>
 
@@ -51,7 +52,7 @@ const Home = () => {
               to="/qurantext"
               className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 w-full flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
             >
-              Read
+              اقرأ
               <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
             </Link>
           </div>
@@ -64,18 +65,17 @@ const Home = () => {
               <i className="fa-brands fa-ussunnah"></i>
             </div>
             <h2 className="text-2xl font-bold text-emerald-900 dark:text-emerald-400 mb-2 font-cairo">
-              Prophetic Sunnah
+              السنة النبوية
             </h2>
             <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-              Access the authentic Hadiths and sayings of Prophet Muhammad
-              (PBUH).
+              تصفح سنة النبي صلى الله عليه وسلم.
             </p>
           </div>
           <Link
             to="/sunnah"
             className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 w-full flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
           >
-            Explore Sunnah
+            تصفح
             <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
           </Link>
         </div>

@@ -44,7 +44,10 @@ const AudioPlayerPage = () => {
 
   if (!audioInfo?.audioUrl)
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center text-center p-6 transition-colors duration-300">
+      <div
+        dir="rtl"
+        className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center text-center p-6 transition-colors duration-300"
+      >
         <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-slate-200/60 dark:border-gray-700 max-w-sm w-full">
           <div className="w-16 h-16 mx-auto mb-4 bg-rose-50 dark:bg-rose-900/20 rounded-2xl flex items-center justify-center text-rose-500 dark:text-rose-400">
             <i className="fa-solid fa-triangle-exclamation text-2xl"></i>
@@ -70,7 +73,7 @@ const AudioPlayerPage = () => {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-6 flex flex-col justify-center items-center transition-colors duration-300"
-      dir="ltr"
+      dir="rtl"
     >
       <div className="w-full max-w-md bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-slate-200/60 dark:border-gray-700 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-500"></div>
@@ -80,10 +83,10 @@ const AudioPlayerPage = () => {
 
         <button
           onClick={() => navigate(-1)}
-          className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors cursor-pointer group"
+          className=" mb-6 inline-flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors cursor-pointer group"
         >
           <i className="fa-solid fa-arrow-right text-xs transition-transform group-hover:-translate-x-0.5"></i>
-          Back to Surahs
+          ارجع للخلف
         </button>
 
         <div className="relative w-40 h-40 mx-auto mb-8">
@@ -103,7 +106,7 @@ const AudioPlayerPage = () => {
 
         <div className="text-center mb-8">
           <span className="inline-block px-3 py-1 mb-3 bg-emerald-100/80 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold rounded-full uppercase tracking-wide border border-emerald-200 dark:border-emerald-700/50">
-            Now Playing
+            تستمع الآن إلى
           </span>
           <h1 className="font-cairo text-2xl md:text-3xl font-bold text-emerald-900 dark:text-emerald-400 mb-2 truncate px-2">
             {surahName}
@@ -134,28 +137,8 @@ const AudioPlayerPage = () => {
             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 bg-white dark:bg-gray-700 border border-slate-200 dark:border-gray-600 rounded-xl hover:bg-emerald-50 dark:hover:bg-gray-600 hover:text-emerald-700 dark:hover:text-emerald-300 hover:border-emerald-200 dark:hover:border-emerald-700 transition-all duration-200"
           >
             <i className="fa-solid fa-download text-xs"></i>
-            Download
+            تحميل
           </a>
-          <button
-            onClick={() => {
-              const shareUrl = window.location.href;
-              if (navigator.share) {
-                navigator
-                  .share({
-                    title: surahName,
-                    text: `Listening to ${surahName} recited by ${reciterName}`,
-                    url: shareUrl,
-                  })
-                  .catch(() => {});
-              } else {
-                navigator.clipboard.writeText(shareUrl);
-              }
-            }}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 bg-white dark:bg-gray-700 border border-slate-200 dark:border-gray-600 rounded-xl hover:bg-emerald-50 dark:hover:bg-gray-600 hover:text-emerald-700 dark:hover:text-emerald-300 hover:border-emerald-200 dark:hover:border-emerald-700 transition-all duration-200"
-          >
-            <i className="fa-solid fa-share-nodes text-xs"></i>
-            Share
-          </button>
         </div>
       </div>
     </div>

@@ -66,21 +66,21 @@ const Sunnah = () => {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-6 transition-colors duration-300"
-      dir="ltr"
+      dir="rtl"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10 px-4">
           <span className="inline-block px-4 py-1.5 mb-4 mt-[100px] bg-amber-100/80 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs font-semibold rounded-full tracking-wide uppercase border border-amber-200 dark:border-amber-700/50">
-            Prophetic Sunnah
+            السنة النبوية
           </span>
           <h1 className="font-cairo text-4xl md:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3">
-            {selectedBookSlug ? "Hadiths Collection" : "Books of Sunnah"}
+            {selectedBookSlug ? "قائمة الأحاديث" : "كتب السنة"}
           </h1>
           <p className="text-slate-600 dark:text-gray-300 max-w-xl mx-auto">
             {selectedBookSlug
-              ? "Browse authentic narrations from the Prophet Muhammad (PBUH)"
-              : "Select a book to explore its collection of hadiths"}
+              ? "تصفح السنة النبوية للنبي صلى الله عليه وسلم"
+              : "اختر كتابا"}
           </p>
         </div>
 
@@ -120,7 +120,7 @@ const Sunnah = () => {
                       <div className="space-y-2 mb-5">
                         <p className="text-slate-600 dark:text-gray-400 font-medium flex items-center gap-2">
                           <i className="fa-regular fa-user text-slate-400 dark:text-gray-500 text-sm"></i>
-                          Scholar:{" "}
+                          العالم:{" "}
                           <span className="text-slate-800 dark:text-gray-200">
                             {book.writerName}
                           </span>
@@ -128,11 +128,11 @@ const Sunnah = () => {
                         <div className="flex gap-4 text-sm text-slate-500 dark:text-gray-400">
                           <span className="flex items-center gap-1">
                             <i className="fa-regular fa-folder"></i>
-                            {book.chapters_count} Chapters
+                            {book.chapters_count} فصل
                           </span>
                           <span className="flex items-center gap-1">
                             <i className="fa-regular fa-message"></i>
-                            {book.hadiths_count} Hadiths
+                            {book.hadiths_count} حديث
                           </span>
                         </div>
                       </div>
@@ -142,7 +142,7 @@ const Sunnah = () => {
                       onClick={() => handleBookClick(book.bookSlug)}
                       className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 dark:from-emerald-700 dark:hover:from-emerald-600 text-white font-medium py-3 px-4 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn"
                     >
-                      View Hadiths
+                      تصفح المحتوى
                       <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
                     </button>
                   </div>
@@ -157,7 +157,7 @@ const Sunnah = () => {
               className="mb-6 inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-slate-200/60 dark:border-gray-700 text-slate-700 dark:text-gray-200 font-medium rounded-xl hover:bg-emerald-50 dark:hover:bg-gray-700 hover:text-emerald-700 dark:hover:text-emerald-400 hover:border-emerald-200 dark:hover:border-emerald-700 transition-all duration-200 shadow-sm"
             >
               <i className="fa-solid fa-arrow-right text-sm"></i>
-              Back to Books
+              ارجع للخلف
             </button>
 
             {loadingHadiths ? (
@@ -262,15 +262,15 @@ const Sunnah = () => {
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-gray-700 border border-slate-200 dark:border-gray-600 text-slate-700 dark:text-gray-200 font-medium rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:bg-emerald-50 dark:hover:bg-gray-600 hover:text-emerald-700 dark:hover:text-emerald-400 hover:border-emerald-200 dark:hover:border-emerald-700 transition-all duration-200"
                   >
                     <i className="fa-solid fa-chevron-right text-xs"></i>
-                    Previous
+                    السابق
                   </button>
 
                   <span className="px-4 py-2 text-slate-600 dark:text-gray-300 font-medium bg-slate-100 dark:bg-gray-700/50 rounded-lg">
-                    Page{" "}
+                    الصفحة{" "}
                     <span className="text-emerald-700 dark:text-emerald-400 font-bold">
                       {currentPage}
                     </span>{" "}
-                    of {lastPage}
+                    من {lastPage}
                   </span>
 
                   <button
@@ -280,7 +280,7 @@ const Sunnah = () => {
                     disabled={currentPage === lastPage}
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-gray-700 border border-slate-200 dark:border-gray-600 text-slate-700 dark:text-gray-200 font-medium rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:bg-emerald-50 dark:hover:bg-gray-600 hover:text-emerald-700 dark:hover:text-emerald-400 hover:border-emerald-200 dark:hover:border-emerald-700 transition-all duration-200"
                   >
-                    Next
+                    التالي
                     <i className="fa-solid fa-chevron-left text-xs"></i>
                   </button>
                 </div>

@@ -9,7 +9,7 @@ const Quran = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://mp3quran.net/api/v3/reciters?language=eng")
+    fetch("https://mp3quran.net/api/v3/reciters?language=ar")
       .then((response) => response.json())
       .then((data) => {
         setReciters(data.reciters);
@@ -37,29 +37,25 @@ const Quran = () => {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-6 text-left transition-colors duration-300"
-      dir="ltr"
+      dir="rtl"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10 px-4">
           <span className="inline-block px-4 py-1.5 mb-4 mt-[100px] bg-emerald-100/80 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 text-xs font-semibold rounded-full tracking-wide uppercase border border-emerald-200 dark:border-emerald-700/50">
-            Holy Qur'an
+            أهلا بك !
           </span>
           <h1 className="font-cairo text-4xl md:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3">
-            Choose Your Recitation
+            مكتبة التلاوات الصوتية
           </h1>
           <p className="text-slate-600 dark:text-gray-300 max-w-xl mx-auto">
-            Select a reciter and a Surah to start listening
+            اختر قارئا من القائمة ثم اختر السورة
           </p>
         </div>
 
         <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/60 dark:border-gray-700">
           {/* Reciter Selection */}
           <div className="mb-8">
-            <label className="block font-semibold text-emerald-900 dark:text-emerald-400 mb-3 text-lg">
-              <i className="fa-solid fa-microphone-lines me-2"></i>
-              Choose Reciter:
-            </label>
             <div className="relative max-w-xl">
               <select
                 className="w-full p-3.5 pr-10 bg-slate-50 dark:bg-gray-700 border border-slate-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-slate-700 dark:text-gray-200 appearance-none transition-all cursor-pointer hover:border-slate-300 dark:hover:border-gray-500"
@@ -75,7 +71,7 @@ const Quran = () => {
                 }}
                 disabled={loading.reciters}
               >
-                <option value="">Select a reciter...</option>
+                <option value="">اختر قارئا</option>
                 {reciters.map((reciter) => (
                   <option key={reciter.id} value={reciter.id}>
                     {reciter.name}
@@ -100,7 +96,7 @@ const Quran = () => {
           <div className="border-t border-slate-100 dark:border-gray-700 pt-6">
             <h3 className="font-semibold text-slate-700 dark:text-gray-200 mb-4 flex items-center gap-2">
               <i className="fa-solid fa-audio-description"></i>
-              Select a Surah
+              اختر السورة
             </h3>
             {loading.surahs ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
@@ -133,18 +129,18 @@ const Quran = () => {
                           state: {
                             audioUrl: audioUrl,
                             reciterName: selectedReciter.name,
-                            surahName: surah.englishName,
+                            surahName: surah.name,
                           },
                         });
                       } else {
-                        alert("Please select a reciter first");
+                        alert("اختر قارئا أولا !");
                       }
                     }}
                   >
                     <span className="absolute top-2 left-2 text-[10px] font-bold text-slate-400 dark:text-gray-400 group-hover:text-emerald-100 transition-colors">
                       {surah.number}
                     </span>
-                    <span className="block mt-1">{surah.englishName}</span>
+                    <span className="block mt-1">{surah.name}</span>
                   </button>
                 ))}
               </div>

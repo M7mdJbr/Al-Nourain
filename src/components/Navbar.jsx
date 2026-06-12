@@ -20,14 +20,15 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/quran", label: "Qur'an Mp3" },
-    { to: "/qurantext", label: "Qur'an Text" },
-    { to: "/sunnah", label: "Sunnah" },
+    { to: "/", label: "الرئيسية" },
+    { to: "/quran", label: "استمع للقرآن" },
+    { to: "/qurantext", label: "اقرأ القرآن" },
+    { to: "/sunnah", label: "تصفح السنة النبوية" },
   ];
 
   return (
     <header
+      dir="rtl"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md border-b border-slate-200/60 dark:border-gray-800 py-3"
@@ -41,7 +42,7 @@ const Navbar = () => {
             <i className="fa-solid fa-mosque text-lg"></i>
           </div>
           <span className="font-cairo font-bold text-xl text-emerald-900 dark:text-emerald-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
-            Al-Nourain
+            النورين
           </span>
         </Link>
 
