@@ -9,20 +9,67 @@ Check out the live website here: [Live Demo Link](https://m7mdjbr.github.io/Al-N
 
 ##  Features
 
-###  1. Holy Qur'an Section
-* **Dynamic Reciter Selection:** Fetching a massive list of world-renowned Qur'an reciters via the MP3Quran API.
-* **Complete Surah Index:** Instantly displays all 114 Surahs.
-* **Custom Audio Player:** A dedicated audio player page (`/player`) wrapped in a clean, modern UI mimicking a native music streaming app.
+###  1. Holy Qur'an Audio Section
+* **Reciter search and autocomplete:** Search for reciters by name and choose from real-time suggestions.
+* **Full Surah library:** Load all 114 Surahs from the Quran API with a responsive selection grid.
+* **Audio listening experience:** Select a reciter, choose a Surah, and play it using the built-in audio flow.
+* **Clean reciter badge:** The selected reciter is shown clearly for confirmation before playback.
 
-###  2. Hadith Encyclopedia (Sunnah)
-* **Core Hadith Books:** Showcases 8 major prophetic books including Sahih Al-Bukhari, Sahih Muslim, Sunan Abu Dawood, Jami' Al-Tirmidhi, and more.
-* **Bilingual View:** Displays the original Arabic text side-by-side or stacked with its accurate English translation.
-* **Smart Pagination:** Optimized data fetching that allows users to navigate smoothly through thousands of prophetic narrations without overloading the browser.
+###  2. Quran Text Reading
+* **Surah index page:** Browse the full list of Surahs with details like revelation type and ayah count.
+* **Dedicated Surah detail view:** Read each Surah with easy navigation and modern card styling.
 
-###  3. UI/UX Excellence
-* Unified and sophisticated color palette based on **Indigo** and **Soft Gray** accents.
-* Fully responsive layout (Mobile, Tablet, and Desktop friendly) utilizing **CSS Grid**.
-* Smart loading states and button toggles for seamless screen navigation.
+###  3. Sunnah and Hadith
+* **Sunnah library:** Browse major Hadith books fetched from the Hadith API.
+* **Paginated collections:** Load Hadiths by book with pagination for fast, stable browsing.
+* **Book details:** View book metadata such as author, chapter count, and hadith count.
+
+###  4. Radio and Live Streams
+* **Radio station page:** Browse a list of radio channels with play/pause controls.
+* **Embedded audio player:** Play radio streams directly inside the app.
+
+###  5. Home Page Highlights
+* **Modern landing page:** Includes quick access cards for Quran, Sunnah, and radio sections.
+* **Featured stream card:** A dedicated broadcast section for an important Quran-related radio stream.
+* **RTL Arabic-friendly layout:** Designed for right-to-left reading and Arabic usability.
+
+###  6. UI / UX & Theming
+* **Responsive design:** Works across mobile, tablet, and desktop screens.
+* **Light/dark theme support:** Uses theme context to switch modes consistently.
+* **Tailwind styling:** Clean utility-based design with subtle gradients and rounded cards.
+
+---
+
+##  الميزات
+
+###  1. قسم القرآن الصوتي
+* **بحث تلقائي عن القراء:** ابحث عن القارئ بالاسم واختر من قائمة الاقتراحات الفورية.
+* **فهرس السور الكامل:** تحميل جميع السور الـ 114 من واجهة برمجة تطبيقات القرآن.
+* **تجربة استماع صوتي:** اختر قارئًا ثم سورة للاستماع باستخدام التشغيل المدمج.
+* **بطاقة القارئ المحدد:** يظهر اسم القارئ المختار بوضوح قبل التشغيل.
+
+###  2. قراءة نص القرآن
+* **صفحة فهرس السور:** تصفح قائمة السور مع نوع الوحي وعدد الآيات.
+* **عرض تفصيلي للسورة:** قراءة كل سورة بتصميم حديث وسهل الاستخدام.
+
+###  3. السنة النبوية والأحاديث
+* **مكتبة السنة:** تصفح كتب الأحاديث الرئيسية من خلال واجهة برمجة التطبيقات.
+* **التصفح مع الترقيم:** تحميل الأحاديث حسب الكتاب مع دعم الصفحات لعرض سريع ومستقر.
+* **تفاصيل الكتاب:** عرض معلومات الكتاب مثل المؤلف وعدد الفصول وعدد الأحاديث.
+
+###  4. الراديو والبث المباشر
+* **صفحة المحطات:** تصفح قوائم المحطات الصوتية مع أزرار تشغيل وإيقاف.
+* **مشغل صوت مدمج:** تشغيل البثات الصوتية مباشرة داخل التطبيق.
+
+###  5. الصفحة الرئيسية
+* **واجهة رئيسية حديثة:** بطاقات وصول سريعة للقرآن والسنة والراديو.
+* **بطاقة بث مميزة:** قسم مخصص لإذاعة تفسير القرآن المفضلة.
+* **واجهة مريحة باللغة العربية:** تصميم يدعم الاتجاه من اليمين إلى اليسار.
+
+###  6. واجهة المستخدم والتصميم
+* **تصميم متجاوب:** يعمل على الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر.
+* **دعم الوضعين الفاتح والداكن:** التبديل بين الثيمات داخل التطبيق.
+* **تصميم Tailwind:** واجهة نظيفة بألوان متدرجة وبطاقات منحنية.
 
 ---
 
