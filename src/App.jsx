@@ -9,6 +9,8 @@ import SurahDetails from "./components/SurahDetails.jsx";
 import QuranText from "./pages/QuranText.jsx";
 import AudioPlayerPage from "./pages/AudioPlayerPage.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
+import Radio from "./pages/Radio.jsx";
+
 const App = () => {
   return (
     <>
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/sunnah" element={<Sunnah />} />
           <Route path="/qurantext" element={<QuranText />} />
           <Route path="/qurantext/:surahNumber" element={<SurahDetails />} />
+          <Route path="/radio" element={<Radio />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
         <Footer />
       </ThemeProvider>

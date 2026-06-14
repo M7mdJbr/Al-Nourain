@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css"; 
 
 const AudioPlayerPage = () => {
   const location = useLocation();
@@ -120,14 +122,13 @@ const AudioPlayerPage = () => {
         </div>
 
         <div className="bg-gradient-to-r from-slate-50 to-emerald-50/50 dark:from-gray-700/50 dark:to-gray-800/50 p-5 rounded-2xl border border-slate-200/60 dark:border-gray-600 shadow-inner">
-          <audio
-            controls
-            className="w-full accent-emerald-600 dark:accent-emerald-500 [&::-webkit-media-controls-panel]:bg-slate-100 dark:[&::-webkit-media-controls-panel]:bg-gray-700 [&::-webkit-media-controls-current-time-display]:text-slate-700 dark:[&::-webkit-media-controls-current-time-display]:text-gray-200 [&::-webkit-media-controls-time-remaining-display]:text-slate-700 dark:[&::-webkit-media-controls-time-remaining-display]:text-gray-200"
+          <AudioPlayer
+            src={audioUrl}
             autoPlay
-          >
-            <source src={audioUrl} type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+            showJumpControls={false} 
+            customAdditionalControls={[]} 
+            className=" dark:bg-gray-700"
+          />
         </div>
 
         <div className="mt-6 flex justify-center gap-3">

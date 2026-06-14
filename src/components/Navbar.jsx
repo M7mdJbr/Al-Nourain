@@ -24,6 +24,7 @@ const Navbar = () => {
     { to: "/quran", label: "استمع للقرآن" },
     { to: "/qurantext", label: "اقرأ القرآن" },
     { to: "/sunnah", label: "تصفح السنة النبوية" },
+    {to:"/radio", label: "الراديو " },
   ];
 
   return (

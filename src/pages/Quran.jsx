@@ -4,9 +4,21 @@ import { useNavigate } from "react-router-dom";
 const Quran = () => {
   const [reciters, setReciters] = useState([]);
   const [selectedReciter, setSelectedReciter] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const [surahs, setSurahs] = useState([]);
   const [loading, setLoading] = useState({ reciters: true, surahs: true });
   const navigate = useNavigate();
+
+  const filteredReciters = reciters.filter((reciter) =>
+    reciter.name.toLowerCase().includes(searchTerm.trim().toLowerCase()),
+  );
+
+  const selectReciter = (reciter) => {
+    setSelectedReciter(reciter);
+    setSearchTerm(reciter.name);
+    setShowSuggestions(false);
+  };
 
   useEffect(() => {
     fetch("https://mp3quran.net/api/v3/reciters?language=ar")
@@ -57,29 +69,66 @@ const Quran = () => {
           {/* Reciter Selection */}
           <div className="mb-8">
             <div className="relative max-w-xl">
-              <select
-                className="w-full p-3.5 pr-10 bg-slate-50 dark:bg-gray-700 border border-slate-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-slate-700 dark:text-gray-200 appearance-none transition-all cursor-pointer hover:border-slate-300 dark:hover:border-gray-500"
+              <input
+                type="text"
+                value={searchTerm}
                 onChange={(e) => {
-                  if (!e.target.value) {
+                  setSearchTerm(e.target.value);
+                  setShowSuggestions(true);
+                  if (!e.target.value.trim()) {
                     setSelectedReciter(null);
-                    return;
                   }
-                  const reciter = reciters.find(
-                    (r) => r.id === Number(e.target.value),
-                  );
-                  setSelectedReciter(reciter);
                 }}
-                disabled={loading.reciters}
-              >
-                <option value="">اختر قارئا</option>
-                {reciters.map((reciter) => (
-                  <option key={reciter.id} value={reciter.id}>
-                    {reciter.name}
-                  </option>
-                ))}
-              </select>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-slate-400 dark:text-gray-400">
-                <i className="fa-solid fa-chevron-down text-xs"></i>
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+                placeholder="ابحث عن قارئ"
+                className="w-full p-3.5 bg-slate-50 dark:bg-gray-700 border border-slate-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-slate-700 dark:text-gray-200 transition-all hover:border-slate-300 dark:hover:border-gray-500"
+              />
+
+              {showSuggestions && searchTerm.trim() && filteredReciters.length > 0 && (
+                <div className="absolute left-0 right-0 mt-2 max-h-64 overflow-auto rounded-2xl border border-slate-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg z-10">
+                  {filteredReciters.slice(0, 8).map((reciter) => (
+                    <button
+                      key={reciter.id}
+                      type="button"
+                      onMouseDown={() => selectReciter(reciter)}
+                      className="w-full text-right px-4 py-3 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 text-slate-700 dark:text-gray-200 transition-all"
+                    >
+                      {reciter.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="mt-4">
+              <div className="relative max-w-xl">
+                <select
+                  className="w-full p-3.5 pr-10 bg-slate-50 dark:bg-gray-700 border border-slate-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 text-slate-700 dark:text-gray-200 appearance-none transition-all cursor-pointer hover:border-slate-300 dark:hover:border-gray-500"
+                  onChange={(e) => {
+                    if (!e.target.value) {
+                      setSelectedReciter(null);
+                      return;
+                    }
+                    const reciter = reciters.find(
+                      (r) => r.id === Number(e.target.value),
+                    );
+                    setSelectedReciter(reciter);
+                    setSearchTerm(reciter.name);
+                  }}
+                  value={selectedReciter?.id ?? ""}
+                  disabled={loading.reciters}
+                >
+                  <option value="">اختر قارئاً</option>
+                  {filteredReciters.map((reciter) => (
+                    <option key={reciter.id} value={reciter.id}>
+                      {reciter.name}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-slate-400 dark:text-gray-400">
+                  <i className="fa-solid fa-chevron-down text-xs"></i>
+                </div>
               </div>
             </div>
 
