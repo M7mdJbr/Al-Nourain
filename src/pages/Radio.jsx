@@ -31,9 +31,9 @@ const Radio = () => {
   return (
     <div
       dir="rtl"
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-slate-900 dark:text-gray-100 p-6 transition-colors duration-300 mt-16"
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-slate-900 dark:text-gray-100 p-6 transition-colors duration-300 "
     >
-      <div className="max-w-6xl mx-auto mt-16">
+      <div className="max-w-6xl mx-auto mt-25">
         <div className="text-center px-4 pb-10">
           <span className="inline-block px-4 mb-8 py-1.5 mb-4 bg-emerald-100/80 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 text-xs font-semibold rounded-full uppercase tracking-wide border border-emerald-200 dark:border-emerald-700/50">
             الإذاعة
