@@ -13,16 +13,26 @@
         U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
 }
 
+@font-face {
+    font-family: "Hafs Smart";
+    src: url("/fonts/HafsSmart.woff") format("woff");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
 @theme {
     --font-cairo: "Cairo", sans-serif;
     --font-ibm: "IBM Plex Sans Arabic", sans-serif;
     --font-amiri: "Amiri", serif;
-    --font-quran: "Amiri Quran", serif;
-    --font-hafs: "Amiri Quran", "Amiri", serif;
+    --font-quran: "Hafs Smart", "Amiri Quran", "Amiri", serif;
+    --font-hafs: "Hafs Smart", "Amiri Quran", "Amiri", serif;
 }
 
 @layer base {
     [class*="font-quran"] {
+        font-family: var(--font-quran) !important;
         font-feature-settings:
             "ss01" on,
             "ss02" on;
@@ -33,9 +43,21 @@
     }
 
     [class*="font-hafs"] {
+        font-family: var(--font-hafs) !important;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         line-height: 2.4;
     }
+}
+
+/* Force Arabic font across the site to avoid device font overriding */
+html, body, #root {
+    font-family: var(--font-hafs);
+}
+
+/* Ensure Arabic text renders RTL where needed */
+[dir="rtl"] {
+    direction: rtl;
+    unicode-bidi: embed;
 }
