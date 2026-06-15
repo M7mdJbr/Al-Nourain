@@ -1,8 +1,60 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const [audioError, setAudioError] = useState(false);
+  // حالات التحكم في الصوت والبث
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // مرجع لعنصر الصوت الـ Native
+  const audioRef = useRef(null);
+  const streamUrl = "https://backup.qurango.net/radio/mukhtasartafsir";
+
+  // دالة التحكم في التشغيل والإيقاف
+  const togglePlay = () => {
+    if (!audioRef.current) {
+      // أول مرة يضغط، بننشئ عنصر الصوت وبنشغله
+      setIsLoading(true);
+      const audio = new Audio(streamUrl);
+      audio.preload = "none";
+
+      audio.oncanplay = () => {
+        setIsLoading(false);
+      };
+
+      audioRef.current = audio;
+    }
+
+    if (isPlaying) {
+      // في البث المباشر الأفضل نعمل pause ونصفر السورس عشان ميفضلش يسحب بيانات في الخلفية
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      setIsLoading(true);
+      // بنعيد لقط الإشارة الحية من جديد
+      audioRef.current.src = streamUrl;
+      audioRef.current.load();
+      audioRef.current
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+          setIsLoading(false);
+        })
+        .catch(() => {
+          setIsLoading(false);
+        });
+    }
+  };
+
+  // دالة التحكم في كتم الصوت
+  const toggleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <div
       dir="rtl"
@@ -26,7 +78,7 @@ const Home = () => {
       </div>
 
       {/* Quick Access Cards Section */}
-      <div className="grid grid-cols-1  gap-6 max-w-4xl w-full px-4">
+      <div className="grid grid-cols-1 gap-6 max-w-4xl w-full px-4">
         {/* Holy Qur'an Card */}
         <div className="group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-slate-200/60 dark:border-gray-700 flex flex-col justify-between items-center text-center hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
           <div>
@@ -83,7 +135,7 @@ const Home = () => {
       </div>
 
       {/* Radio Section */}
-      <div className="group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-slate-200/60 dark:border-gray-700 flex flex-col justify-between items-center text-center hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 max-w-4xl w-full px-4">
+      <div className="group bg-emerald-100/35 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-slate-200/60 dark:border-gray-700 flex flex-col justify-between items-center text-center hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 max-w-4xl w-full px-4">
         <div className="w-full">
           <div className="w-16 h-16 mx-auto mb-5 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center text-blue-700 dark:text-blue-400 text-3xl group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors">
             <i className="fa-solid fa-radio"></i>
@@ -94,38 +146,62 @@ const Home = () => {
           <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
             استمع لإذاعة التفسير المختصر للقرآن الكريم بصوت عالي الجودة.
           </p>
-          <div className="w-full">
-            {audioError && (
-              <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 text-sm">
-                <p>
-                  قد تكون هناك مشكلة في تحميل الإذاعة. يرجى التحقق من اتصالك
-                  بالإنترنت.
+
+          {/* الـ Player المودرن الجديد */}
+          <div className="w-full max-w-md mx-auto bg-white/80 dark:bg-gray-700/60 backdrop-blur-md p-4 rounded-xl border border-slate-200/50 dark:border-gray-600 flex items-center justify-between shadow-sm mt-4">
+            {/* الجزء الأيمن: الاسم والحالة */}
+            <div className="flex items-center gap-3 text-right">
+              <div
+                className={`w-3 h-3 rounded-full ${isPlaying ? "bg-red-500 animate-pulse" : "bg-slate-400"} `}
+              ></div>
+              <div>
+                <p className="font-cairo text-sm font-semibold text-emerald-950 dark:text-emerald-300">
+                  بث مباشر حي
+                </p>
+                <p className="font-cairo text-xs text-slate-400 dark:text-gray-400">
+                  {isLoading
+                    ? "جاري الاتصال..."
+                    : isPlaying
+                      ? "يتم التشغيل الآن"
+                      : "متوقف"}
                 </p>
               </div>
-            )}
-            <audio
-              autoPlay
-              controls
-              controlsList="nodownload"
-              crossOrigin="anonymous"
-              onError={() => setAudioError(true)}
-              onPlay={() => setAudioError(false)}
-              style={{
-                width: "100%",
-                outline: "none",
-              }}
-            >
-              <source
-                src="https://backup.qurango.net/radio/mukhtasartafsir"
-                type="audio/mpeg"
-              />
-              متصفحك لا يدعم تشغيل الصوت
-            </audio>
+            </div>
+
+            {/* الأزرار في المنتصف/اليسار */}
+            <div className="flex items-center gap-4">
+              {/* زر كتم الصوت */}
+              <button
+                onClick={toggleMute}
+                disabled={!isPlaying}
+                className="text-slate-500 dark:text-gray-300 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors disabled:opacity-40"
+              >
+                <i
+                  className={`fa-solid ${isMuted ? "fa-volume-xmark" : "fa-volume-high"} text-lg`}
+                ></i>
+              </button>
+
+              {/* زر التشغيل الأساسي */}
+              <button
+                onClick={togglePlay}
+                disabled={isLoading}
+                className="w-12 h-12 rounded-full bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white flex items-center justify-center shadow-md hover:scale-105 transition-all duration-200 disabled:opacity-50"
+              >
+                {isLoading ? (
+                  <i className="fa-solid fa-spinner animate-spin text-lg"></i>
+                ) : isPlaying ? (
+                  <i className="fa-solid fa-pause text-lg"></i>
+                ) : (
+                  <i className="fa-solid fa-play text-lg translate-x-[-1px]"></i> /* ترحيل بسيط عشان السنتر */
+                )}
+              </button>
+            </div>
           </div>
         </div>
+
         <Link
           to="/radio"
-          className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-md mt-2 hover:shadow-lg"
+          className="group/btn bg-emerald-800 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-md mt-6 hover:shadow-lg"
         >
           استمع للإذاعة
           <i className="fa-solid mr-2 fa-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>

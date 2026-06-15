@@ -17,6 +17,7 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-h5-audio-player": "^3.10.2",
+    "react-modern-audio-player": "^2.3.1",
     "react-router-dom": "^7.16.0",
     "tailwindcss": "^4.3.0"
   },
