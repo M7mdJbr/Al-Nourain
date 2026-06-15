@@ -26,7 +26,7 @@ const Home = () => {
       </div>
 
       {/* Quick Access Cards Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full px-4">
+      <div className="grid grid-cols-1  gap-6 max-w-4xl w-full px-4">
         {/* Holy Qur'an Card */}
         <div className="group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-slate-200/60 dark:border-gray-700 flex flex-col justify-between items-center text-center hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
           <div>
