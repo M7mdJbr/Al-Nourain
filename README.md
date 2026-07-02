@@ -2,44 +2,61 @@
   <img src="https://raw.githubusercontent.com/M7mdJbr/Al-Nourain/main/public/favicon.png" alt="Al-Nourain Logo" width="100"/>
   <h1>النورين &mdash; Al-Nourain</h1>
   <p><strong>القرآن والسنة &bull; The Quran and Sunnah</strong></p>
+  <p>تطبيق إسلامي ويب ثنائي اللغة (عربي/إنجليزي) لقراءة القرآن والاستماع إليه، وتصفح السنة النبوية، والراديو الإسلامي.</p>
   <p>A bilingual (Arabic/English) Islamic web application for reading and listening to the Quran, browsing hadith, and streaming Islamic radio.</p>
   <p>
-    <a href="https://al-nourain.vercel.app/#/"><strong>Live Demo &raquo;</strong></a>
+    <a href="https://al-nourain.vercel.app/#/"><strong>التطبيق المباشر &raquo;</strong></a>
   </p>
   <br/>
 </div>
 
 ---
 
-## Features
+## ✨ الميزات | Features
 
-- **Quran Audio Recitations** &mdash; Browse and search over 100+ reciters, select a surah, and listen with a full-featured audio player.
-- **Quran Text Reader** &mdash; Read all 114 surahs verse-by-verse with authentic Arabic script and proper Quranic fonts.
-- **Hadith Browser** &mdash; Browse major hadith books with Arabic text, English translation, and pagination.
-- **Islamic Radio** &mdash; Stream live Islamic radio stations from around the world.
-- **Dark Mode** &mdash; Toggle between light and dark themes (persisted to localStorage).
-- **Responsive Design** &mdash; Fully responsive with mobile hamburger menu and adaptive grid layouts.
-- **Arabic-First UI** &mdash; RTL layout with custom Quranic fonts optimized for Arabic rendering.
-
-## Built With
-
-| Technology | Purpose |
+| العربية | English |
 |---|---|
-| [React 19](https://react.dev/) | UI framework |
-| [Vite 8](https://vitejs.dev/) | Build tool & dev server |
-| [Tailwind CSS 4](https://tailwindcss.com/) | Utility-first styling |
-| [React Router v7](https://reactrouter.com/) | Client-side routing (HashRouter) |
-| [react-h5-audio-player](https://github.com/lhz516/react-h5-audio-player) | Audio playback |
-| [Font Awesome 6](https://fontawesome.com/) | Icons |
-| [gh-pages](https://github.com/tschaub/gh-pages) | Deployment |
+| استمع للقرآن بأصوات 100+ قارئ | Quran audio recitations from 100+ reciters |
+| اقرأ القرآن آيةً آيةً بخط عثماني جميل | Verse-by-verse Quran reader with authentic Uthmani script |
+| تصفح كتب السنة النبوية مع الترجمة | Browse major hadith books with Arabic & English |
+| استمع للراديو الإسلامي المباشر | Live Islamic radio streaming |
+| الوضع الليلي | Dark mode toggle (persisted to localStorage) |
+| تصميم متجاوب بالكامل | Fully responsive with mobile-first layout |
+| واجهة عربية مع دعم RTL | Arabic-first UI with proper RTL support |
 
-## Getting Started
+## 🎨 الخطوط | Fonts
 
-### Prerequisites
+| الخط | الاستخدام |
+|---|---|
+| [Cairo](https://fonts.google.com/specimen/Cairo) | الخط الرئيسي للواجهة — حديث ونظيف للعربية |
+| [Amiri](https://fonts.google.com/specimen/Amiri) | خط نص القرآن والحديث — كلاسيكي أنيق |
+| [Inter](https://fonts.google.com/specimen/Inter) | النصوص الإنجليزية — خط لاتيني واضح |
+| Hafs Smart (محمّل محلياً) | عرض النص القرآني بدقة عالية |
+
+جميع الخطوط مستضافة ذاتياً عبر حزم `@fontsource` — لا اعتماد على CDN، وتعمل بدون إنترنت.
+
+## 🛠 التقنيات | Built With
+
+| التقنية | الغرض |
+|---|---|
+| [React 19](https://react.dev/) | إطار الواجهة |
+| [Vite 8](https://vitejs.dev/) | أداة البناء |
+| [Tailwind CSS 4](https://tailwindcss.com/) | التنسيق باستخدام utility classes |
+| [React Router v7](https://reactrouter.com/) | التوجيه (HashRouter) |
+| [react-h5-audio-player](https://github.com/lhz516/react-h5-audio-player) | مشغل الصوت |
+| [Font Awesome 6](https://fontawesome.com/) | الأيقونات |
+| [@fontsource/cairo](https://github.com/fontsource/fontsource) | خط Cairo مستضاف ذاتياً |
+| [@fontsource/amiri](https://github.com/fontsource/fontsource) | خط Amiri مستضاف ذاتياً |
+| [@fontsource/inter](https://github.com/fontsource/fontsource) | خط Inter مستضاف ذاتياً |
+
+## 🚀 البداية | Getting Started
+
+### المتطلبات | Prerequisites
+
 - Node.js 18+
 - npm
 
-### Installation
+### التنصيب | Installation
 
 ```bash
 git clone https://github.com/M7mdJbr/Al-Nourain.git
@@ -47,88 +64,81 @@ cd Al-Nourain
 npm install
 ```
 
-### Development
-
-Start the dev server:
+### التشغيل | Development
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+افتح [http://localhost:5173](http://localhost:5173) في المتصفح.
 
-## Available Scripts
+## 📜 الأوامر | Available Scripts
 
-| Command | Description |
+| الأمر | الشرح |
 |---|---|
-| `npm run dev` | Start development server |
-| `npm run build` | Production build to `dist/` |
-| `npm run preview` | Preview the production build |
-| `npm run lint` | Run ESLint |
-| `npm run deploy` | Build & deploy to GitHub Pages |
+| `npm run dev` | تشغيل خادم التطوير |
+| `npm run build` | بناء الإصدار النهائي إلى `dist/` |
+| `npm run preview` | معاينة الإصدار النهائي محلياً |
+| `npm run lint` | تشغيل مدقق الكود |
+| `npm run deploy` | بناء ونشر إلى GitHub Pages |
 
-## Project Structure
+## 📁 هيكل المشروع | Project Structure
 
 ```
 Al-Nourain/
-  index.html                  # Entry HTML
-  vite.config.js              # Vite configuration
-  eslint.config.js            # ESLint flat config
+  index.html                  # مدخل HTML
+  vite.config.js              # إعدادات Vite
   public/
-    favicon.png               # Site favicon
-    _redirects                # Netlify SPA redirect rule
+    favicon.png               # أيقونة الموقع
+    _redirects                # قواعد إعادة التوجيه لـ Netlify
     fonts/
-      HafsSmart.woff          # Quranic Arabic font
+      HafsSmart.woff          # خط القرآن المحلي
   src/
-    main.jsx                  # App entry with HashRouter
-    App.jsx                   # Route definitions
-    index.css                 # Global styles & Tailwind
+    main.jsx                  # مدخل التطبيق مع HashRouter
+    App.jsx                   # تعريف المسارات
+    index.css                 # الأنماط العامة و Tailwind والخطوط
     context/
-      ThemeContext.jsx         # Dark/Light theme provider
+      ThemeContext.jsx         # مزود الثيم (ليلي/نهاري)
     components/
-      Navbar.jsx              # Responsive navigation bar
-      Footer.jsx              # Page footer
-      ThemeToggle.jsx         # Dark mode toggle button
-      SurahDetails.jsx        # Verse-by-verse surah reader
+      Navbar.jsx              # شريط التنقل العلوي
+      Footer.jsx              # التذييل
+      ThemeToggle.jsx         # زر تبديل الثيم
+      SurahDetails.jsx        # عرض السورة آيةً آيةً
     pages/
-      Home.jsx                # Landing page with live radio
-      Quran.jsx               # Reciter & surah selection
-      AudioPlayerPage.jsx     # Full audio player
-      QuranText.jsx           # Surah list for reading
-      Sunnah.jsx              # Hadith books browser
-      Radio.jsx               # Islamic radio stations
+      Home.jsx                # الصفحة الرئيسية مع الراديو
+      Quran.jsx               # اختيار القارئ والسورة
+      AudioPlayerPage.jsx     # مشغل الصوت الكامل
+      QuranText.jsx           # قائمة السور للقراءة
+      Sunnah.jsx              # تصفح كتب الحديث
+      Radio.jsx               ## محطات الراديو الإسلامية
 ```
 
-## APIs
+## 🌐 واجهات API | APIs
 
-| API | Usage |
+| الواجهة | الاستخدام |
 |---|---|
-| [mp3quran.net](https://mp3quran.net/) | Reciters list & audio files |
-| [alquran.cloud](https://alquran.cloud/) | Surah list & verse text |
-| [hadithapi.com](https://hadithapi.com/) | Hadith books & hadiths (API key required) |
+| [mp3quran.net](https://mp3quran.net/) | قائمة القراء وملفات الصوت |
+| [alquran.cloud](https://alquran.cloud/) | قائمة السور والنص القرآني |
+| [hadithapi.com](https://hadithapi.com/) | كتب الحديث والأحاديث (يتطلب مفتاح API) |
 
-## Deployment
+## 📦 النشر | Deployment
 
 ### GitHub Pages
 
-The project is pre-configured for GitHub Pages deployment:
+المشروع مهيأ مسبقاً للنشر على GitHub Pages:
 
 ```bash
 npm run deploy
 ```
 
-Make sure to set the `homepage` field in `package.json` to your GitHub Pages URL.
+تأكد من ضبط حقل `homepage` في `package.json` على رابط GitHub Pages الخاص بك.
 
 ### Netlify
 
-The `public/_redirects` file handles SPA routing for Netlify. Simply connect your repo to Netlify with:
+ملف `public/_redirects` يتولى توجيه المسارات لتطبيق SPA على Netlify. قم بربط المستودع مع Netlify مع الإعدادات التالية:
 
-- Build command: `npm run build`
-- Publish directory: `dist`
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+- أمر البناء: `npm run build`
+- مجلد النشر: `dist`
 
 ---
 
