@@ -4,7 +4,7 @@
   <p><strong>القرآن والسنة &bull; The Quran and Sunnah</strong></p>
   <p>A bilingual (Arabic/English) Islamic web application for reading and listening to the Quran, browsing hadith, and streaming Islamic radio.</p>
   <p>
-    <a href="https://M7mdJbr.github.io/Al-Nourain"><strong>Live Demo &raquo;</strong></a>
+    <a href="[https://M7mdJbr.github.io/Al-Nourain](https://al-nourain.vercel.app/#/)"><strong>Live Demo &raquo;</strong></a>
   </p>
   <br/>
 </div>
